@@ -92,7 +92,6 @@ header nav ul li a:hover {
 
 /* Hero Section */
 .hero {
-  background: url('https://lh3.googleusercontent.com/d/1gRa_ow3kO3ypOdw67sY1KYLFhA-D9OFa') no-repeat center center/cover;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -100,21 +99,32 @@ header nav ul li a:hover {
   text-align: center;
   color: #fff;
   position: relative;
+  overflow: hidden;
 }
 
-.hero::before {
-  content: '';
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.3); /* Reduced opacity for clearer background */
+  z-index: -1;
 }
 
-.hero .container {
+.hero-content {
   position: relative;
   z-index: 1;
+}
+
+.hero-content h2 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
 .cta-button {
@@ -530,16 +540,11 @@ footer p {
     display: flex;
   }
 
-  .hero {
-    background-size: cover;
-    background-position: center;
-  }
-
-  .hero h2 {
+  .hero-content h2 {
     font-size: 36px;
   }
 
-  .hero p {
+  .hero-content p {
     font-size: 18px;
   }
 
